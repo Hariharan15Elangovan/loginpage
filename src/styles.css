@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*style.css*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.center{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+   background-color: lightblue;
+}
+.register{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
