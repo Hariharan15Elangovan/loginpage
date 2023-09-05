@@ -1,39 +1,51 @@
+<div class="row">
+   <div class="image-container col-md-auto col-lg-6 col-xl-6 mx-auto" style=margin-top:70px>
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid"
+         alt="Phone image">
+   </div>
+   <div class="col-lg-6 col-md-auto mx-auto">
 
-<mat-toolbar>
-   <span>REGISTRATION</span>
-</mat-toolbar>
-<mat-card class="my-card" style="padding-bottom:70px ;">
-
-   <div class="register">
-
-<mat-card-content>
-   <form class="my-form">
-      <mat-form-field class="full-width">
-             <mat-label>First Name</mat-label>
-             <input  matInput  placeholder="First name"  name="fname"  required>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Last Name</mat-label>
-             <input  matInput  placeholder="Last Name" name="lname"  required>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Address</mat-label>
-             <input  matInput  placeholder="Address" name="address"  required>
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Email</mat-label>
-             <input  matInput  placeholder="Email" name="email">
-          </mat-form-field>
-          <mat-form-field class="full-width">
-             <mat-label>Password</mat-label>
-             <input  matInput  placeholder="Password"  name="password">
-          </mat-form-field>
-   </form>
- <div class="btn">
-   <button mat-raised-button type="submit" color="primary">Submit</button>
-   <button mat-raised-button class="btn2" type="reset" color="primary">Clear</button>
- </div>
-</mat-card-content>
-
+      <form [formGroup]="ValidationForm" (ngSubmit)="ValidationForm.valid && submit()" novalidate
+         class="needs-validation" style="margin-top: 20px;">
+         <div class="col-md-6" style="margin-left: 48px;">
+            <label for="validationCustom01" class="form-label">First Name</label>
+            <input formControlName="email"  type="email" class="form-control"
+               id="validationCustom01" value="Hari" required>
+            <div class="valid-feedback">
+               Looks good!
+            </div>
+         </div>
+         <div class="col-md-6" style="margin-left: 48px; margin-top: 15px;">
+            <label for="validationCustom02" class="form-label">Last Name</label>
+            <input formControlName="password"  type="password" class="form-control"
+               id="validationCustom02" value="Password" required>
+            <div class="valid-feedback">
+               Looks good!
+            </div>
+            <form [formGroup]="ValidationForm" (ngSubmit)="ValidationForm.valid && submit()" novalidate
+               class="needs-validation" style="margin-top: 20px;">
+               <div class="col-md-10" style="margin-left: 48px;">
+                  <label for="validationCustom01" class="form-label">Username</label>
+                  <input formControlName="email" [ngClass]="{'is-invalid':ValidationForm.controls['email'].errors}"
+                     [ngClass]="{'is-valid':ValidationForm.controls['email'].valid}" type="email" class="form-control"
+                     id="validationCustom01" placeholder="Username" required>
+                  <div class="valid-feedback">
+                     Looks good!
+                  </div>
+               </div>
+               <div class="col-md-10" style="margin-left: 48px; margin-top: 15px;">
+                  <label for="validationCustom02" class="form-label">Password</label>
+                  <input formControlName="password"
+                     [ngClass]="{'is-invalid':ValidationForm.controls['password'].errors}"
+                     [ngClass]="{'is-valid':ValidationForm.controls['password'].valid}" type="password"
+                     class="form-control" id="validationCustom02" value="Password" required>
+                  <div class="valid-feedback">
+                     Looks good!
+                  </div>
+                  <button type="submit" style="margin-top: 15px;" class="btn btn-primary">Login</button>
+               </div>
+            </form>
+         </div>
+      </form>
+   </div>
 </div>
-</mat-card>
